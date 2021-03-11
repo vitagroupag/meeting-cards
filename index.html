@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Meeting Cards</title>
-	<!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meeting Cards</title>
+  <!-- Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-		<style type="text/css">
-			img {
-				background-color:#720035;
-				margin:0px;
-				padding:0px;
-				float:left;
-			}
-			p { text-align: center;}
-			.small{
-				width:25%;
-				height:auto;
-			}
-			.full{
-				width:100%;
-				padding: 30px;
-			}
-      .lang_images {
-        display: none;
-      }
-    </style>
-	</head>
-	<body>
+  <style type="text/css">
+    img {
+      background-color: #720035;
+      margin: 0px;
+      padding: 0px;
+      float: left;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .small {
+      width: 25%;
+      height: auto;
+    }
+
+    .full {
+      width: 100%;
+      padding: 30px;
+    }
+
+    .lang_images {
+      display: none;
+    }
+
+    #select_lang {
+      font-size: 2em;
+      width: 4em;
+    }
+
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
     <select id="select_lang">
       <option selected="selected" value="lang_de">DE</option>
       <option value="lang_en">EN</option>
     </select>
-    <div id="images">
+    <label for="select_lang">Select Language</label>
+  </nav>
+  <main>
+    <div id="images" class="clearfix">
       <div id="lang_de" class="lang_images">
-    		<img id="de_crd-a" alt="" class="small" src="images/de/card1.png">
+        <img id="de_crd-a" alt="" class="small" src="images/de/card1.png">
         <img id="de_crd-b" alt="" class="small" src="images/de/card2.png">
         <img id="de_crd-c" alt="" class="small" src="images/de/card3.png">
         <img id="de_crd-d" alt="" class="small" src="images/de/card4.png">
@@ -82,18 +105,21 @@
         <img id="en_crd-n" alt="" class="small" src="images/en/card17.png">
         <img id="en_crd-o" alt="" class="small" src="images/en/card18.png">
       </div>
-    <div>
-  		<p>
-  			<ul>
-          <li>Designed by <a href="https://twitter.com/stephenwalker78">Stephen Walker</a> at <a href="http://seethinkdo.it">See Think Do</a> to be used on a mobile device, because not everyone has a printer. <br>Inspired by the original super cards from <a href="https://www.collaborationsuperpowers.com/supercards/" target="_blank">Collaboration Superpowers</a>.</li>
-          <li>Adapted to vitagroup.ag by <a href="https://twitter.com/tkaefer">Tobias Käfer</a></li>
-        </ul>
-  		</p>
-  		<p>
-  			Help <a href="https://github.com/vitagroupag/meeting-cards">improve these cards</a> on Github.
-  		</p>
     </div>
-		<script>
+  </main>
+  <footer>
+    <p>
+      <ul>
+        <li>Designed by <a href="https://twitter.com/stephenwalker78">Stephen Walker</a> at <a href="http://seethinkdo.it">See Think Do</a> to be used on a mobile device, because not everyone has a printer. <br>Inspired by the original super cards
+          from <a href="https://www.collaborationsuperpowers.com/supercards/" target="_blank">Collaboration Superpowers</a>.</li>
+        <li>Adapted to vitagroup.ag by <a href="https://twitter.com/tkaefer">Tobias Käfer</a></li>
+      </ul>
+    </p>
+    <p>
+      Help <a href="https://github.com/vitagroupag/meeting-cards">improve these cards</a> on Github.
+    </p>
+  </footer>
+  <script>
     $(function() {
       console.log("starting")
       $("#lang_de").show();
@@ -113,6 +139,7 @@
         $(value).show();
       });
     })
-		</script>
-	</body>
+  </script>
+</body>
+
 </html>
